@@ -36,6 +36,7 @@ public class ComplaintController {
 	@ResponseBody
 	public String addComplaint(HttpServletRequest request) throws UnsupportedEncodingException{
 		System.out.println("添加投诉");
+		/////////////改了的标记///////////////////////
 		//获得话题
 		String ccontent=request.getParameter("complaintcontent");
 		System.out.println("cconteng1:"+ccontent);
