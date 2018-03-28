@@ -1,0 +1,92 @@
+@CHARSET "utf-8";
+#modlue1{
+	position:fixed;left: 50%;
+	top: 50%;
+	width: 30%;
+	height: 30%;
+	margin-left:-200px;
+	margin-top:-150px;
+	background-color:#fff;
+	z-index:100;
+	border:1px solid grey;
+	font-size:15px;
+	border-radius: 5px;
+	overflow: hidden;
+    }
+.sHeader{width:100%;height:10%;background-color:#38b7da;color:white;}
+.sHeader span{
+    float:left; padding:5px 20px;
+}
+#scancle{float:right; color:white;background-color:#38b7da;
+    border: #38b7da; padding:5px 20px;}
+
+.sname{
+	height:4em;
+	font-size:15px;
+}
+.spassword{
+	height:4em;
+	font-size:15px;
+	}
+.sspassword{
+	height:4em;
+	font-size:15px;
+}
+.sname span{
+	margin:10% 10% 2px 5px;
+	
+	 }
+.sname input{
+	height:20px;
+	background-color:#f4f4f4;
+	
+
+	
+}
+.spassword span{ 
+	margin:10% 1% 2px 5px; 
+	
+}
+.spassword input{
+	height:20px;
+	background-color:#f4f4f4;
+
+}
+.sspassword span{ 
+	margin:10% 1% 2px 5px; 
+	
+}
+.sspassword input{
+	height:20px;
+	background-color:#f4f4f4;
+
+}
+#confirm1{
+	border-radius:5px;
+    background-color: #38b7da;
+    height:25px;
+    width:70px;
+    color: #F0F8FF
+}
+.MyBtn1{
+	height:10%;
+	background-color:white;
+	padding-left: 43%
+	}
+/*蒙版样式*/
+#Cover1{
+    z-index:0;
+    display:block;
+    position:fixed;
+    width:100%;
+    height:100%;
+    left:0;top:0;
+    background-color:Black;
+    opacity: 0.5;
+}
+/*弹窗样式*/
+#pop_cov1{
+    position:fixed;left:50%;top:50%;width:450px;height:320px;
+    display: block;
+
+}

@@ -1,0 +1,157 @@
+@CHARSET "UTF-8";
+*{
+    margin: 0px;
+}
+html{
+height:100%;
+width:100%
+}
+body{
+    background:url(../image/a.png) fixed center/100% 100%;
+    background-repeat: no-repeat;
+    text-align: center;
+    height:100%;
+    width:100%
+}
+#Header{
+    height: 30%;
+    width:100%;
+}
+#Header img{
+  
+    margin: 12% auto 10px;
+  height: 5em;
+  width: 24em;
+}
+ /* #username input{
+   width: 50%;border:#666666;
+    background: url(../image/01-登录-账号.png)#E1E1E1 no-repeat; margin: 20px auto;
+    border-radius: 5px 5px ;font-family:幼圆;font-size: 15px; 
+     background-position: 5px;padding-left: 32px;
+  
+}
+#password input{
+  width: 50%;margin: 0px auto 20px;border: #666666;
+    border-radius: 5px 5px ;font-family:幼圆;font-size: 15px;
+    background: url(../image/01-登录-密码.png)#E1E1E1 no-repeat;
+    background-position: 5px;padding-left: 32px;
+}  */
+.mid{
+    height: 32%;
+    width: 40%;
+    margin:10px auto ;
+    background:#F0F8FF;
+    border-radius: 10px 10px ;
+    text-align: center;
+    border:1px solid #d9d9d9;
+    
+  
+    left:50%;
+    right:50%;
+    background-color:rgba(240,255,255,1.5)
+}
+h2{
+    color: #666666;
+    font-family:幼圆;
+    font-size: 24px;
+    text-align: center;
+    padding-top: 20px ;
+}
+
+#remember{
+    font-family:幼圆;
+    font-size: 13px ;
+    height: 20px;
+    /*width: 50%;*/
+    /*margin: 0px auto 10px ;*/
+    margin-bottom: 10px;
+    color:#B7B7B7 ;
+}
+#remember1{
+    display: inline-block;
+}
+#remember2{
+   float: right;margin-right: 120px;
+}
+#login_bottom{
+    color:#FFFAFA
+}
+#login_bottom input{
+  width: 60% ;  background: #87CEEB;
+    border-radius: 5px 5px ;font-family:幼圆;font-size: 15px
+}
+
+ input{
+    vertical-align:middle;
+    margin-bottom:2px;
+    /**margin-bottom:2px;*/
+}
+.active:checked{
+    background:#f00;
+}
+#Footer{
+    height: 50%;
+    font-size: 10px ;
+    color:#CDC5BF;
+    text-align: center;
+}
+#Footer p{
+    padding-top:68% ;
+}
+
+
+
+.table{
+	border-radius:8px;
+	}
+.text_field{
+	font-size:18px;
+	font-family:幼圆;
+	background-color:#e6e6e6;
+	border-top-right-radius:5px;
+	border-bottom-right-radius:5px;
+	border:0;
+	padding-left:8px;
+	outline:none;
+	}
+.lable_input{
+	
+	border-radius:20px;
+	margin:0;
+	color:white;
+	background-color:#FFFFFF;
+
+	}
+#btn_login{
+	font-size:14px;
+	font-family:幼圆;
+	
+	width:50%;
+	height:15%;
+	line-height:28px;
+	border-radius:5px;
+	color:white;
+	background:#00a7ff/* #87CEEB */;
+	border:0;
+	
+	}
+	
+.td1{
+	padding-left:5px;
+	border-radius:5px;
+	}
+.td2{
+	padiing-left:15px;
+	}
+.img1{
+	padding-left:3.8px;
+	padding-top:3px;
+	}
+	
+.img2{
+	padding-left:5.2px;
+	padding-top:3px;
+	}
+.input1{
+	padding-left:8px;
+	}

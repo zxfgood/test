@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-12-29 13:15:50 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.phy.gsjlpt.entity.Message" table="MESSAGE">
+        <id name="mid" type="java.lang.Integer">
+            <column name="mid" />
+            <generator class="identity" />
+        </id>
+        <property name="mnumber" type="java.lang.String">
+            <column name="mnumber" />
+        </property>
+        <property name="mcontent" type="java.lang.String">
+            <column name="mcontent" />
+        </property>
+        <property name="mstate" type="java.lang.String">
+            <column name="mstate" />
+        </property>
+        <property name="mreplay" type="java.lang.String">
+            <column name="mreplay" />
+        </property>
+        <many-to-one name="muid" class="com.phy.gsjlpt.entity.User" fetch="join">
+            <column name="muid" />
+        </many-to-one>
+        <many-to-one name="mruid" class="com.phy.gsjlpt.entity.User" fetch="join">
+            <column name="mruid" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

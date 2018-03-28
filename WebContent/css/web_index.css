@@ -1,0 +1,271 @@
+@CHARSET "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+html{
+	height:100%;
+	width:100%;
+	}
+body{
+	height:100%;
+	width:100%;
+	
+	}
+	
+#in_header{
+    height:15%;
+    width: 100%;
+    background: url(../image/02-有话要说-菜单栏-顶部背景图.png) fixed center/100% 100%;
+    background-repeat: no-repeat;
+}
+#logo{
+   height: 100%;
+    width: 65%;
+    float:left;
+}
+.tpl-logo {
+	/* 左上角图片 */
+  margin-top: 2em;
+  margin-left: 2em;
+}
+.hello_user{
+  height: 53%;
+  float: left;
+  /* display: inline; */
+  color: #FFFAFA;
+  font-size: 16px;
+  margin-top: 4em;
+   margin-left: 1%;
+}
+
+
+/*左边栏*/
+#in_left{
+    height:85%;
+    width:15%;
+    background: #666666;
+    float: left;
+}
+
+ul{
+    margin: 0;
+    padding: 0 ;
+    list-style: none;/*没有列表样式  */
+    border-right-width: 0;
+}
+li {
+    display: block;
+    height: 35px;
+    line-height: 30px;
+    padding: 3px;
+    color: #FFFAFA;
+    border-bottom:2px solid #4D4D4D;
+    list-style: none;
+}
+#item1 span{
+    color:#7EC0EE;
+}
+#in_left ul li a {
+    color: #FFFAFA;
+    text-decoration: none;
+    padding-left: 35px;
+}
+ #in_left ul li:hover,#in_left ul li a:hover{
+    opacity:0.3;/*透明度*/
+    filter:alpha(opacity=30); /* 针对 IE8 以及更早的版本 */
+    color:#38b7da;
+    border-color:#38b7da;
+
+}
+ #item1{
+     color: #38b7da;
+ }
+.item{
+    margin-right:10px;
+}
+/* 右边 */
+#in_right{
+    height:85%;
+    width:84%;
+    float:right;
+    background: #E0EEEE;
+}
+/* 表格上方 */
+#in_top{
+    height:5%;
+    width: 100%;
+    background: #C6E2FF;
+}
+
+#top_left{
+    float: left;
+    width: 70%;
+    margin: 10px 0;
+
+}
+#top_left img {
+    margin-left: 3%;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+#top_right{
+    float: right;
+    margin: 10px 0;
+    width: 30%;
+
+}
+#top_right img {
+    margin-left: 3%;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+/* #in_mid{
+    height:490px;
+    width: 100%;
+    background: #FFFAFA;
+} */
+/*表格  */
+#right_content{
+  height: 86%;
+  width: 98%;
+  background-color: white;
+  margin: 2% auto
+
+}
+#right_top{
+    height: 8%;
+    background: white;
+    padding-top:5%;
+}
+
+#right_top input{
+     height: 20px;
+     border-radius: 2px;
+    border:solid #B7B7B7 1px;
+
+
+ }
+#right_top label{
+    padding-left:20px;
+}
+#button1{
+    background: url(../image/02-有话要说-操作-查询.png)#FF8C00 no-repeat ;
+    background-position: 5px;
+    padding-left: 20px;
+    border-radius:6px;
+    height: 20px;
+    width: 60px;
+    }
+#button2{background: url(../image/02-有话要说-查询-清空.png)#FF8C00 no-repeat;
+    background-position: 5px;
+    padding-left:20px;
+    border-radius:6px ;
+    height: 20px;
+    width: 60px;}
+#right_top_right{
+    float:right;
+}
+#button3{
+    background: url(../image/05-用户管理-操作-新增.png)#FF8C00 no-repeat;
+    border-radius:6px;
+    padding-left:20px;
+    background-color: #FF8C00 ;
+    height: 20px;
+    width: 80px;
+    margin-right: 50px;
+}
+
+#right_mid{
+    width: 100%;
+    height: 73%;
+}
+#right_mid table{
+    width: 100%;
+    text-align:center;
+    font-size:18px;
+    color:#1F1F1F;
+    
+}
+#right_mid table tr.event{background:#EEEEE0;}
+
+
+.tr1{
+    background-color: #87CEEB;
+    height:2em;
+}
+
+.td1{
+    width: 5% ;text-align: center;
+    height:2em;
+}
+.td2{
+    width: 5% ;text-align: center
+}
+.td3{
+    width: 50% ;text-align: center
+}
+.td4{
+    width: 5% ;text-align: center
+}
+.td5{
+    width: 25% ;text-align: center
+}
+.td5 a{
+    text-decoration: none;
+}
+.td6{
+	width: 10% ;text-align: center;
+}
+.tr3{
+    background-color: #F2F2F2;
+}
+#right_bottom{
+    height:13%;
+    margin-top:2%;
+}
+/* 脚部*/
+#in_footer{
+    height:4%;
+    width: 100%;
+    background: url(../image/02-有话要说-菜单栏-底部背景图.png) fixed center/100% 100%;
+    background-repeat: no-repeat;
+}
+#in_footer p{
+    text-align:center;
+    padding-top: 5px;
+    font-size: 10px;
+    color: #FFFAFA;
+}
+/* 分页 */
+.tips{
+	float:left;
+	margin-left:1em;
+	}
+.qutos{
+	float：right;
+	
+	}
+/* 左菜单缩进 */
+#in_center{
+    background:#87CEEB;
+    width:1%;
+    height:85%;
+    float:left;
+	}
+#center_1{
+	background:#87CEEB;
+    width:100%;
+    height:100%
+
+	}
+#center_2{
+	 background:#87CEEB;
+    width:100%;
+    heiht:0;
+	
+	}
+
+

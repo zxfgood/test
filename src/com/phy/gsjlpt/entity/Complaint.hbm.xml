@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-12-29 13:15:50 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.phy.gsjlpt.entity.Complaint" table="complaint">
+        <id name="cid" type="java.lang.Integer">
+            <column name="cid" />
+            <generator class="identity" />
+        </id>
+        <property name="cnumber" type="java.lang.String">
+            <column name="cnumber" />
+        </property>
+        <property name="ccontent" type="java.lang.String">
+            <column name="ccontent" />
+        </property>
+        <property name="cstate" type="java.lang.String">
+            <column name="cstate" />
+        </property>
+        <property name="creplay" type="java.lang.String">
+            <column name="creplay" />
+        </property>
+        <many-to-one name="cuid" class="com.phy.gsjlpt.entity.User" fetch="join">
+            <column name="cuid" />
+        </many-to-one>
+        <many-to-one name="cruid" class="com.phy.gsjlpt.entity.User" fetch="join">
+            <column name="cruid" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

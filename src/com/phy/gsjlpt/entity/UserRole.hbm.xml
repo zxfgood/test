@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-3-10 11:22:31 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.phy.gsjlpt.entity.UserRole" table="sys_users_roles">
+        <id name="userId" type="java.lang.Long">
+            <column name="user_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="roleId" type="java.lang.Long">
+            <column name="role_id" />
+        </property>
+    </class>
+</hibernate-mapping>

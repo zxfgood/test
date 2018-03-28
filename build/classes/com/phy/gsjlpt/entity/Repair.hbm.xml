@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-12-29 13:15:50 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.phy.gsjlpt.entity.Repair" table="REPAIR">
+        <id name="rid" type="java.lang.Integer">
+            <column name="rid" />
+            <generator class="identity" />
+        </id>
+        <property name="rnumber" type="java.lang.String">
+            <column name="rnumber" />
+        </property>
+        <property name="rcontent" type="java.lang.String">
+            <column name="rcontent" />
+        </property>
+        <property name="rstate" type="java.lang.String">
+            <column name="rstate" />
+        </property>
+        <property name="rreplay" type="java.lang.String">
+            <column name="rreplay" />
+        </property>
+        <many-to-one name="ruid" class="com.phy.gsjlpt.entity.User" fetch="join">
+            <column name="ruid" />
+        </many-to-one>
+        <many-to-one name="rruid" class="com.phy.gsjlpt.entity.User" fetch="join">
+            <column name="rruid" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

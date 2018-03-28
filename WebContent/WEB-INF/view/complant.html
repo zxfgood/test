@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>投诉平台</title>
+    <link href="/compantchat/css/web_complant.css" rel="stylesheet" type="text/css">
+    <link href="/compantchat/css/pagination.css" rel="stylesheet" type="text/css">
+    <link href="/compantchat/css/new_topic.css" rel="stylesheet" type="text/css">
+    <link href="/compantchat/css/btnPop_speakDetail.css" rel="stylesheet" type="text/css">
+    <link href="/compantchat/css/btnPop_reply.css" rel="stylesheet" type="text/css">
+     <link href="/compantchat/css/set.css" rel="stylesheet" type="text/css">
+ 	<script type="text/javascript" src="/compantchat/js/set.js"></script>
+    <script src="/compantchat/js/jquery.js"></script>
+    <script src="/compantchat/js/complant.js"></script>
+    <script src="/compantchat/js/jquery.pagination.js"></script>
+    <script src="/compantchat/js/complant_pagination.js"></script>
+    <script src="/compantchat/js/logout.js"></script>
+</head>
+
+<body>
+
+<div id="in_header">
+    <div id="logo">
+        <img id="tpl_log0" src="/compantchat/image/02-有话要说-菜单栏-logo.png" class="tpl-logo" >
+    </div>
+    <div class="hello_user" >
+         <span id="helloname"></span><span>,你好</span>
+    </div>
+    <div class="hello_user" >
+        <img src="/compantchat/image/02-有话要说-顶部-账户.png">
+         <span id="role">系统管理员</span>
+        <img src="/compantchat/image/02-有话要说-顶部-下拉.png">
+    </div>
+    <div class="hello_user" >
+        <img src="/compantchat/image/02-有话要说-顶部-设置.png">
+        <span onclick="setPassword()">设置</span>
+    </div>
+    <div class="hello_user" >
+        <img src="/compantchat/image/02-有话要说-顶部-退出.png">
+        <span onclick="logout()">退出</span>
+
+    </div>
+
+</div>
+
+<div id="in_left">
+    <ul id="left_ul">
+        <li >
+            <a href="/compantchat/message/messageindex" id="item1" >
+                <img id="img1" class="item" src="/compantchat/image/03-办公管理-菜单栏-有话要说.png">有话要说               
+            </a>
+        </li>
+        <li class="left_item" >
+            <a href="/compantchat/repair/repairindex">
+                <img class="item" src="/compantchat/image/02-有话要说-菜单栏-办公维修.png">办公维修
+            </a>
+        </li>
+        <li class="left_item"id="item2">
+            <a href="/compantchat/complaint/complaintindex" >
+                <img class="item" src="/compantchat/image/04-投诉平台-投诉平台.png">
+                <span>投诉平台</span>
+            </a>
+        </li>
+        <!-- <li class="left_item">
+            <a href="#" >
+                <img  class="item" src="/compantchat/image/02-有话要说-菜单栏-用户管理.png">用户管理
+            </a>
+        </li> -->
+    </ul>
+
+</div>
+ <div id="in_center">
+<div id="center_1"title="隐藏菜单"></div>
+<div id="center_2"title="显示菜单"></div>
+</div> 
+<div id="in_right">
+    <div id="in_top">
+        <div id="top_left" >
+            <img src="/compantchat/image/02-有话要说-菜单栏-当前位置.png">
+            <span>当前位置：投诉平台</span>
+        </div>
+        <div id="top_right">
+            <img src="/compantchat/image/02-有话要说-菜单栏-当前时间.png">
+            <span>当前时间：</span>
+            <span id="Clock"></span>
+        </div>
+    </div>
+    <!--页面嵌入-->
+    <div id="right_content">
+        <div id="right_top">
+            <form>
+            <label>关键词查询：</label>
+            <input type="text">
+            <input  id="button1" type="button" value="查询" >
+            <input  id="button2" type="reset"  value="清空">
+             <select style="width:6em;height:20px;font-size:14px;  border-radius: 2px;
+  border: solid #B7B7B7 1px;">
+            <option selected="selected">状态查询</option>
+            <option>新建</option>
+            <option>完成</option>
+            </select>
+            <input type="date" id="start">- 
+            <input type="date" id="end">
+            <input  id="timeSelect" type="button" value="时间查询" 
+            style="border-radius:6px;height: 20px;background:#FF8C00 ;width: 60px;">
+            
+            <div id="right_top_right">
+                <input  id="button3" type="button" value="新增话题" onclick="return btnPop_onclick()">
+            </div>
+            </form>
+        </div>
+        <div id="right_mid">
+            <table id="complaintlist">
+                <tr class="tr1">
+                    <td  class="td1" ><input type="checkbox"></td>
+                    <td  class="td2">序号</td>
+                    <td  class="td3" >内容</td>
+                    <td  class="td4">状态</td>
+                    <td class="td5" >操作</td>
+                </tr>
+                   
+        </table>
+        </div>
+           <div id="right_bottom">
+          <!--   <span> 共XX条记录，当前显示第X页</span> -->
+          <div class="tips" >
+		           共<span class="count"></span>条记录，
+		          当前显示<span class="now"></span>页,
+		          总共<span class="total"></span>页     
+          </div>
+          <div id="Pagination" class="quotes"></div>
+        </div>
+    </div>
+    <div id="in_footer">
+        <p >Copyright © 2017 江西航天鄱湖云科技有限公司 </p>
+    </div>
+    </div>
+</body>
+</html>
