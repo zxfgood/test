@@ -32,7 +32,7 @@ public class LoginController {
 	@RequestMapping(value="login2",method=RequestMethod.POST)
 	@ResponseBody
 	public String doLogin(HttpServletRequest request){
-		//test
+		//第二次test
 		System.out.println("456456");
 		//获得用户名
 		String username=request.getParameter("username");
