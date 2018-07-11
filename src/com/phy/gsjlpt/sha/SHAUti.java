@@ -33,4 +33,13 @@ public class SHAUti {
 		}
 		return hexValue.toString();
 	}
+	public static void main(String[] args) {
+		try {
+			System.out.println(shaEncode("a"));
+		} catch (UnsupportedEncodingException e) {
+			// TODO 自动生成的 catch 块
+			e.printStackTrace();
+		}
+	}
 }
+

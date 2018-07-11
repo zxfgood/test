@@ -135,6 +135,7 @@ public class MessageController {
 		 JsonConfig config = new JsonConfig();  
 		 config.setExcludes(new String[]{"muid","mruid"});
 		 String json = JSONObject.fromObject(map,config).toString();
+		 //String json= JSONObject.fromObject(messagelist);
 		return json;
 		//return totalRecord;
 	}

@@ -10,8 +10,8 @@
 
          <mvc:annotation-driven/>  
         <context:component-scan base-package="com.phy.gsjlpt.controller"></context:component-scan>
-         <mvc:interceptors>  
-            <!-- 多个拦截器，顺序执行 -->  
+<!--          <mvc:interceptors>  
+            多个拦截器，顺序执行  
             <mvc:interceptor> 
                  <mvc:mapping path="/user/**" />  
                  <mvc:mapping path="/message/**" />
@@ -22,7 +22,7 @@
                 <bean class="controllerinterceptor.DoInterceptor">
                 </bean>  
             </mvc:interceptor>  
-        </mvc:interceptors>
+        </mvc:interceptors> -->
     <!-- <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">    
     <property name="templateLoaderPath">    
         <value>/WEB-INF/view/</value>    

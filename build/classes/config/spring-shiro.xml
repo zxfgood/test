@@ -9,7 +9,7 @@
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
        <!-- 缓存管理器 使用Ehcache实现 -->
 	<bean id="cacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
-		<property name="cacheManagerConfigFile" value="classpath:/resource/ehcache-shiro.xml" />
+		<property name="cacheManagerConfigFile" value="classpath:/config/ehcache-shiro.xml" />
 	</bean>
        <!-- 凭证匹配器 -->
     <bean id="credentialsMatcher" class="com.phy.gsjlpt.utils.RetryLimitHashedCredentialsMatcher">
@@ -91,8 +91,7 @@
         <property name="arguments" ref="securityManager"/>
     </bean>
     <!-- Shiro的Web过滤器 -->
-	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
-	<!-- <bean id="shiroFilter" class="shiro.filter.AnyRolesFilter" >  -->
+	 <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean" >
 		<property name="securityManager" ref="securityManager" />
 		<!-- 没有登录跳转的地址 -->
 		<property name="loginUrl" value="/login" />
@@ -110,34 +109,34 @@
 			<value>
 			 <!--authc:代表shiro框架提供的一个过滤器，这个过滤器用于判断当前用户是否已经完成认证，
                          如果当前用户已经认证，就放行，如果当前用户没有认证，跳转到登录页面
-                 anon:代表shiro框架提供的一个过滤器，允许匿名访问-->
-				<!-- 用户模块 -->
-				<!-- /css/**=anon
+                 anon:代表shiro框架提供的一个过滤器，允许匿名访问
+				用户模块-->
+				/css/**=anon
 				/font/**=anon
 				/js/**=anon
-				/lib/**=anon -->
-				/Login=anon
+				/lib/**=anon
+				/Login.html=anon
                 /user/login=anon
                 /logout = logout
-                <!-- 表示必须存在用户，在登录操作是不进行检查的，因为登录的时候根本就不存在用户。 -->
-				/**=user
-				<!-- /create=authc,perms["user:create"] -->
+                /=anon
+                <!--表示必须存在用户，在登录操作是不进行检查的，因为登录的时候根本就不存在用户。-->
+				<!-- /**=user -->
+				/create=authc,perms["user:create"]
 			</value>
 		</property>
 	</bean>
-<!-- <bean  
-    class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">  
+ <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
     <property name="exceptionMappings">  
         <props>  
-            <prop key="org.apache.shiro.authz.UnauthorizedException">/表示捕获的异常
-                /unauthorized  //捕获该异常时跳转的路径
+            <prop key="org.apache.shiro.authz.UnauthorizedException"><!--/表示捕获的异常-->
+                /unauthorized  <!--//捕获该异常时跳转的路径-->
             </prop>
         </props>  
     </property>  
-</bean>  -->
+</bean>
 
-	<!--自定义的Roles Filter-->  
-    <bean id="anyRoles" class="com.phy.gsjlpt.shiro.filter.AnyRolesFilter" />
+	<!--自定义的Roles Filter-->
+     <bean id="anyRoles" class="com.phy.gsjlpt.shiro.filter.AnyRolesFilter" />
     
     <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
  </beans>

@@ -13,7 +13,7 @@ import org.apache.shiro.web.util.WebUtils;
 
 public class AnyRolesFilter extends AuthorizationFilter{
 	private String unauthorizedUrl= "/unauthorized.jsp";
-    private String loginUrl = "/login.jsp";
+    private String loginUrl = "/Login.html";
 	/*
 	 * @see org.apache.shiro.web.filter.AccessControlFilter#isAccessAllowed(javax.servlet.ServletRequest, javax.servlet.ServletResponse, java.lang.Object)
 	 *判断用户的角色，相当于拦截器一样，当用户没登录时，想访问什么网页会跳转到什么网页，没角色权限会跳转到什么页面
