@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2018-3-10 11:18:52 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="com.phy.gsjlpt.entity.RolePermssion" table="sys_roles_permissions">
+    <class name="com.phy.gsjlpt.entity.RolePermission" table="sys_roles_permissions">
         <id name="roleId" type="java.lang.Long">
             <column name="role_id" />
             <generator class="assigned" />

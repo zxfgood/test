@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import net.sf.json.JSONObject;
 import net.sf.json.JsonConfig;
 
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -42,13 +43,15 @@ public class UserMangerController {
 		System.out.println("进入manger首页");
 		return "management";
 	}
+	
+	@RequiresPermissions("user:add")
 	@RequestMapping(value = "/upload", method ={RequestMethod.GET,RequestMethod.POST})
 	@ResponseBody	
     public String upload(HttpServletRequest request, @RequestParam("file") MultipartFile file, ModelMap model) {
         System.out.println("开始");
         String fileName="";
         //String path = request.getSession().getServletContext().getRealPath("upload");
-        String path="V:/upload";
+        String path="f:/upload";
         //得到文件名
         fileName = file.getOriginalFilename();
         //获得保存文件的路径
@@ -133,6 +136,8 @@ public class UserMangerController {
 		String role=request.getParameter("role");
 		mangerservice.addOneuser(username, password, dept, realname, role);
 	}
+	
+	
 	@RequestMapping(value="addUser",method=RequestMethod.POST)
 	public void addUser(User user){
 		mangerservice.addUser(user);

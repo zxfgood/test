@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2017-12-29 13:15:50 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="com.phy.gsjlpt.entity.Message" table="MESSAGE">
+    <class name="com.phy.gsjlpt.entity.Message" table="message">
         <id name="mid" type="java.lang.Integer">
             <column name="mid" />
             <generator class="identity" />

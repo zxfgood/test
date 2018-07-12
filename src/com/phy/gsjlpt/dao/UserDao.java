@@ -124,7 +124,7 @@ public class UserDao {
 	 }
 	 public Set<String> findUserRole(String username){
 		 Session session=sessionFactory.getCurrentSession();
-		 String hql=" select r.role from User u, Role r,UserRole ur where u.username=? and u.uid=ur.user_id and r.id=ur.role_id"; 
+		 String hql=" select r.role from User u, Role r,UserRole ur where u.username=? and u.uid=ur.userId and r.id=ur.roleId"; 
 		 Query query=session.createQuery(hql);
 		 query.setString(0, username);
 		 List<String> role=query.list();
@@ -134,11 +134,11 @@ public class UserDao {
 	 public Set<String> findUserPermission(String username){
 		 Session session=sessionFactory.getCurrentSession();
 		 String hql= "select p.permission" 
-		 +"from User u, Role r, Permission p, UserRole ur, RolePermission rp" 
-		 +"where u.username=? and u.uid=ur.user_id" 
-		 +"and r.id=ur.role_id" 
-		 +"and r.id=rp.role_id" 
-		 +"and p.id=rp.permission_id";
+		 +" from User u, Role r, Permission p, UserRole ur, RolePermission rp" 
+		 +" where u.username=? and u.uid=ur.userId" 
+		 +" and r.id=ur.roleId" 
+		 +" and r.id=rp.roleId" 
+		 +" and p.id=rp.permissionId";
 		 Query query=session.createQuery(hql);
 		 query.setString(0, username);
 		 List<String> permission=query.list();

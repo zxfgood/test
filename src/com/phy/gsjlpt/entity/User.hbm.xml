@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2017-12-29 13:15:50 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="com.phy.gsjlpt.entity.User" table="USER">
+    <class name="com.phy.gsjlpt.entity.User" table="user">
         <id name="uid" type="java.lang.Integer">
             <column name="uid" />
             <generator class="identity" />

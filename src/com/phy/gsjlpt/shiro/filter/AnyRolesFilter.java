@@ -12,7 +12,7 @@ import org.apache.shiro.web.filter.authz.AuthorizationFilter;
 import org.apache.shiro.web.util.WebUtils;
 
 public class AnyRolesFilter extends AuthorizationFilter{
-	private String unauthorizedUrl= "/unauthorized.jsp";
+	private String unauthorizedUrl= "/unauthorized.html";
     private String loginUrl = "/Login.html";
 	/*
 	 * @see org.apache.shiro.web.filter.AccessControlFilter#isAccessAllowed(javax.servlet.ServletRequest, javax.servlet.ServletResponse, java.lang.Object)

@@ -14,9 +14,13 @@ import org.springframework.stereotype.Component;
  */ 
 @Entity
 @Component
-public class RolePermssion implements Serializable {
+public class RolePermission implements Serializable {
 
-    private Long roleId;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 3920054726229907655L;
+	private Long roleId;
     private Long permissionId;
 
     public Long getRoleId() {
@@ -40,7 +44,7 @@ public class RolePermssion implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        RolePermssion that = (RolePermssion) o;
+        RolePermission that = (RolePermission) o;
 
         if (permissionId != null ? !permissionId.equals(that.permissionId) : that.permissionId != null) return false;
         if (roleId != null ? !roleId.equals(that.roleId) : that.roleId != null) return false;
