@@ -133,4 +133,10 @@ public class UserMangerController {
 		String role=request.getParameter("role");
 		mangerservice.addOneuser(username, password, dept, realname, role);
 	}
+	@RequestMapping(value="addUser",method=RequestMethod.POST)
+	public void addUser(User user){
+		mangerservice.addUser(user);
+		System.out.println("username:"+user.getUsername());
+		System.out.println("password:"+user.getPassword());
+	}
 }

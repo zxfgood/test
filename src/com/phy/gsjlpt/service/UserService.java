@@ -27,4 +27,5 @@ public class UserService {
 	public Set<String> getPermission(String username){
 		return userdao.findUserPermission(username);
 	}
+
 }

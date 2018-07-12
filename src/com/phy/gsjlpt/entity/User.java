@@ -58,7 +58,7 @@ public class User{
 		this.dept = dept;
 	}
     public String getCredentialsSalt() {
-        return username + salt;
+        return this.username + this.salt;
     }
 
     public Boolean getLocked() {

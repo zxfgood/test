@@ -8,6 +8,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -91,7 +92,8 @@ public class MessageController {
 	public String getUser(HttpServletRequest request){
 		HttpSession session=request.getSession();
 		//获得当前用户
-		User user=(User) session.getAttribute("user");
+		//User user=(User) session.getAttribute("user");
+		User user=(User)SecurityUtils.getSubject().getPrincipal();
 		//把user信息转为json格式
 		JSONObject json=JSONObject.fromObject(user);
 		System.out.println("jsontostring"+json.toString());

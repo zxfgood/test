@@ -12,6 +12,7 @@ import com.phy.gsjlpt.dao.UserDao;
 import com.phy.gsjlpt.entity.Message;
 import com.phy.gsjlpt.entity.User;
 import com.phy.gsjlpt.sha.SHAUti;
+import com.phy.gsjlpt.utils.PasswordHelper;
 
 import jxl.Cell;
 import jxl.Sheet;
@@ -30,6 +31,8 @@ import net.sf.json.JSONArray;
 public class UserMangerService {
 	@Autowired
 	private UserDao userdao;
+	@Autowired
+    PasswordHelper passwordHelper;
 	public void getFile(String path){
 		//得到文件
 		File file=new File(path);
@@ -133,5 +136,10 @@ public class UserMangerService {
 	}
 	public void addOneuser(String username,String password,String dept,String realname,String role){
 		userdao.addOneuser(username, password, dept, realname, role);
+	}
+	public void addUser(User user){
+		user.setSalt(passwordHelper.getRandomSalt());
+		user.setPassword(passwordHelper.encryptPassword(user.getPassword(), user.getCredentialsSalt()));
+		userdao.addUser(user);
 	}
 }

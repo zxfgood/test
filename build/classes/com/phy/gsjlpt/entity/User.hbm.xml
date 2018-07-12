@@ -23,5 +23,8 @@
         <property name="role" type="java.lang.String">
             <column name="role" />
         </property>
+                <property name="salt" type="java.lang.String">
+            <column name="salt" />
+        </property>
     </class>
 </hibernate-mapping>

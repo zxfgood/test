@@ -25,3 +25,23 @@
 				});
 		});
 	});
+	function addUser() {
+		var username=$("#name").val();
+		var password=$("#pwd").val();
+		$.ajax({
+			type:"POST",
+			url:'/compantchat/manger/addUser',
+			async:true, 
+			data:"username="+username+"&password="+password,
+			dataType: 'json',
+	/*		 success: function(data) {
+				 var name=data.username;
+				 var password=data.username;
+				 if(data.result=="sucess"){
+				 window.location.href="/compantchat/user/scucessdo";
+				 }else{
+					 window.location.href="/compantchat/user/faildo";
+					 }
+			} */
+			});
+	}

@@ -145,4 +145,11 @@ public class UserDao {
 		 Set<String> permissionset = new HashSet(permission);
 		 return permissionset;
 	 }
+	 
+	 public void addUser(User user){
+		 Session session=sessionFactory.getCurrentSession();
+		 session.save(user);
+		//清除缓存和数据库同步
+		 session.flush();
+	 }
 }
