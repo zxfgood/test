@@ -1,8 +1,12 @@
 package com.phy.gsjlpt.controller;
 
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.shiro.SecurityUtils;
@@ -92,7 +96,7 @@ public class LoginController {
 	public String doLogin(){
 		System.out.println("这是scucssdo");
 		//返回index页面
-		return "Login";
+		return "redirect:/Login.html";
 	}
 	@RequestMapping(value="faildo",method={RequestMethod.POST,RequestMethod.GET})
 	public String doFail(){
@@ -116,5 +120,24 @@ public class LoginController {
 		String updatepwd1=SHAUti.shaEncode(updatepwd);
 		user.setPassword(updatepwd1);
 		loginservice.updatePwd(user);
+	}
+	@RequestMapping(value="/unauthorized2",method={RequestMethod.POST,RequestMethod.GET})
+	public void daunauthorized (HttpServletRequest request, HttpServletResponse response) {
+		try {
+			response.sendRedirect("/WEB-INF/view/unauthorized.html");
+		} catch (IOException e) {
+			// TODO 自动生成的 catch 块
+			e.printStackTrace();
+		}
+		/*RequestDispatcher dispatcher=request.getRequestDispatcher("/WEB-INF/view/unauthorized.html");
+		try {
+			dispatcher.forward(request, response);
+		} catch (ServletException e) {
+			// TODO 自动生成的 catch 块
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO 自动生成的 catch 块
+			e.printStackTrace();
+		}*/
 	}
 }

@@ -31,25 +31,25 @@ function doUpload() {
          url: '/compantchat/manger/upload',  
          type: 'POST',  
          data: formData,  
-         async: false,  
+         //async: false,  
          cache: false,  
-         contentType: false,  
+         //contentType: false,  
          processData: false,  
          success: function (returndata) {  
             // alert(returndata);
-             var filename=returndata.result;
-             alert(filename);
-             var str=filename.substr(filename.length-4,filename.length-1);
-             //alert(str);
-             if(str==".xls"){
-            	// alert(filename);
-            	 sendfile(filename);
-            	 btnClose_onclick();
-            	 window.location.reload();
-                 }else{
-                     alert("文件不符合格式");
-                	 //window.location.href="scucess2";
-                     }
+//             var filename=returndata.result;
+//             alert(filename);
+//             var str=filename.substr(filename.length-4,filename.length-1);
+//             //alert(str);
+//             if(str==".xls"){
+//            	// alert(filename);
+//            	 sendfile(filename);
+//            	 btnClose_onclick();
+//            	 window.location.reload();
+//                 }else{
+//                     alert("文件不符合格式");
+//                	 //window.location.href="scucess2";
+//                     }
              
          },  
          error: function (returndata) {  

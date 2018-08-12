@@ -94,11 +94,11 @@
 	 <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean" >
 		<property name="securityManager" ref="securityManager" />
 		<!-- 没有登录跳转的地址 -->
-		<property name="loginUrl" value="/Login.html" />
+		<property name="loginUrl" value="/user/login" />
 		<!-- 登录成功跳转到该地址 -->
 		<property name="successUrl" value="/index" />
 		<!-- 没有权限跳转到该地址 -->
-		<property name="unauthorizedUrl" value="/unauthorized.html" />
+		<property name="unauthorizedUrl" value="/user/unauthorized2" />
 		 <property name="filters">
             <util:map>
                 <entry key="authc" value-ref="anyRoles"/>
@@ -122,22 +122,23 @@
                 <!--表示必须存在用户，在登录操作是不进行检查的，因为登录的时候根本就不存在用户。-->
 				<!-- /**=user -->
 				/create=authc,perms["user:create"]
-				/user/scucessdo=authc
+				/**/user/scucessdo=authc
+				/manger/upload=authc,perms[user:add]
 			</value>
 		</property>
 	</bean>
- <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+ <!-- <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
     <property name="exceptionMappings">  
         <props>  
-            <prop key="org.apache.shiro.authz.UnauthorizedException"><!--/表示捕获的异常-->
-                /unauthorized  <!--//捕获该异常时跳转的路径-->
+            <prop key="org.apache.shiro.authz.UnauthorizedException">/表示捕获的异常
+                /user/unauthorized  //捕获该异常时跳转的路径
             </prop>
         </props>  
     </property>  
-</bean>
+</bean> -->
 
 	<!--自定义的Roles Filter-->
      <bean id="anyRoles" class="com.phy.gsjlpt.shiro.filter.AnyRolesFilter" />
     
-    <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+    <!-- <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/> -->
  </beans>

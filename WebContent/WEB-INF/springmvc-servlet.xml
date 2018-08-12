@@ -40,11 +40,11 @@
     <property name="order" value="0"></property>   
     <property name="contentType" value="text/html;charset=UTF-8"></property>  
 </bean>  -->
-<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/> 
+<!-- <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/> 
     <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator" depends-on="lifecycleBeanPostProcessor"/>  
     <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">  
         <property name="securityManager" ref="securityManager"/>  
-    </bean>  
+    </bean>   -->
 <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
 <mvc:resources location="/image/" mapping="/image/**"/>
 <mvc:resources location="/css/" mapping="/css/**"/> 
@@ -58,6 +58,16 @@
     <!-- Enable Shiro Annotations for Spring-configured beans. Only run after the lifecycleBeanProcessor has run -->  
     <!-- 由于本例中并未使用Shiro注解,故注释掉这两个bean(个人觉得将权限通过注解的方式硬编码在程序中,查看起来不是很方便,没必要使用) -->  
     <!--   --> 
+<!-- <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+    <property name="exceptionMappings">  
+        <props>  
+            <prop key="org.apache.shiro.authz.UnauthorizedException">/表示捕获的异常
+               /unauthorized  //捕获该异常时跳转的路径
+            </prop>
+        </props>  
+    </property>  
+</bean> -->
+    <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
     <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator" depends-on="lifecycleBeanPostProcessor">
        <property name="proxyTargetClass" value="true"/>
    </bean>  
