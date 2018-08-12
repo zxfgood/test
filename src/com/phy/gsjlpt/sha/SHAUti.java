@@ -12,6 +12,7 @@ import java.security.NoSuchAlgorithmException;
  */
 public class SHAUti {
 	public static String shaEncode(String instr) throws UnsupportedEncodingException{
+		//testgithub
 		MessageDigest sha=null;
 		try {
 			sha=MessageDigest.getInstance("SHA");
